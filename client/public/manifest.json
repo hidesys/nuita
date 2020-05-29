@@ -1,25 +1,67 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "name": "Nuita",
+  "short_name": "Nuita",
+  "start_url": "/",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "/images/serviceworker-rails/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "purpose": "maskable any"
     },
     {
-      "src": "logo192.png",
+      "src": "/images/serviceworker-rails/favicon-24x24.png",
+      "sizes": "24x24",
       "type": "image/png",
-      "sizes": "192x192"
+      "purpose": "maskable any"
     },
     {
-      "src": "logo512.png",
+      "src": "/images/serviceworker-rails/favicon-32x32.png",
+      "sizes": "32x32",
       "type": "image/png",
-      "sizes": "512x512"
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/images/serviceworker-rails/favicon-48x48.png",
+      "sizes": "48x48",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/images/serviceworker-rails/favicon-64x64.png",
+      "sizes": "64x64",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/images/serviceworker-rails/favicon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/images/serviceworker-rails/favicon-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/images/serviceworker-rails/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
     }
   ],
-  "start_url": ".",
+  "theme_color": "#36ca6c",
+  "background_color": "#36ca6c",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "orientation": "portrait",
+  "share_target": {
+    "action": "/nweets/new",
+    "method": "GET",
+    "enctype": "application/x-www-form-urlencoded",
+    "params": {
+      "text": "text"
+    }
+  }
 }

@@ -12,6 +12,7 @@ module Nuita
     config.load_defaults 5.2
     config.time_zone = 'Asia/Tokyo'
     config.active_record.default_timezone :utc
+    config.api_only = true
 
     config.paths.add 'app/models/resolvers', eager_load: true
     # Settings in config/environments/* take precedence over those specified here.

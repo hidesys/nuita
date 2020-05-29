@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_04_150925) do
+ActiveRecord::Schema.define(version: 2020_05_29_084648) do
 
   create_table "badges", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -156,9 +156,13 @@ ActiveRecord::Schema.define(version: 2020_05_04_150925) do
     t.boolean "autotweet_enabled", default: false
     t.string "autotweet_content", limit: 40, default: "射精しました！ #nuita [LINK]"
     t.string "biography", limit: 140
+    t.string "provider", default: "email", null: false
+    t.string "uid", default: "", null: false
+    t.text "tokens"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["screen_name"], name: "index_users_on_screen_name", unique: true
+    t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
     t.index ["url_digest"], name: "index_users_on_url_digest", unique: true
   end
 

@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  include DeviseTokenAuth::Concerns::User
   before_create :set_url_digest
   after_create :set_default_censoring
 

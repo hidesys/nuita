@@ -23,4 +23,10 @@ Rails.application.routes.draw do
   resource :link, only: [:create]
   resource :censoring, only: [:update]
   resource :relationship, only: [:create, :destroy]
+
+  namespace :api do
+    scope :v1 do
+      mount_devise_token_auth_for 'User', at: 'auth'     
+    end
+  end
 end

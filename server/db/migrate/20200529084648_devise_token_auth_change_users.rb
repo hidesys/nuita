@@ -1,6 +1,6 @@
 class DeviseTokenAuthChangeUsers < ActiveRecord::Migration[5.2]
   def up
-    add_column :users, :provider, :string, null: false, default: 'email'
+    add_column :users, :provider, :string, null: false, default: 'Nuita'
     add_column :users, :uid, :string, null: false, default: ''
     add_column :users, :tokens, :text
 
@@ -11,10 +11,10 @@ class DeviseTokenAuthChangeUsers < ActiveRecord::Migration[5.2]
     # finds all existing users and updates them.
     # if you change the default values above you'll also have to change them here below:
     User.find_each do |user| 
-      user.uid = user.email
-      user.provider = 'email'
-      p user.email
-      user.save!
+      user.uid = user.url_digest
+      user.provider = 'Nuita'
+
+      user.save
     end
 
     # to speed up lookups to these columns:

@@ -156,7 +156,7 @@ ActiveRecord::Schema.define(version: 2020_05_29_084648) do
     t.boolean "autotweet_enabled", default: false
     t.string "autotweet_content", limit: 40, default: "射精しました！ #nuita [LINK]"
     t.string "biography", limit: 140
-    t.string "provider", default: "email", null: false
+    t.string "provider", default: "Nuita", null: false
     t.string "uid", default: "", null: false
     t.text "tokens"
     t.index ["email"], name: "index_users_on_email", unique: true

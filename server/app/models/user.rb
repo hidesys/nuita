@@ -1,8 +1,4 @@
 class User < ApplicationRecord
-  include DeviseTokenAuth::Concerns::User
-  before_create :set_url_digest
-  after_create :set_default_censoring
-
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -10,6 +6,11 @@ class User < ApplicationRecord
          #:confirmable, :lockable, :timeoutable #,
          #:omniauthable, omniauth_providers: [:twitter]
 
+  include DeviseTokenAuth::Concerns::User
+
+  before_create :set_url_digest
+  after_create :set_default_censoring
+  
   has_many :nweets, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :liked_nweets, through: :likes, source: :nweet

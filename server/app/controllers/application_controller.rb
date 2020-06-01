@@ -1,6 +1,6 @@
-class ApplicationController < ActionController::Base
+class ApplicationController < ActionController::API
   before_action :configure_permitted_parameters, if: :devise_controller?
-
+  
   def tweet(content = render_tweet(current_user.autotweet_content))
     begin
       current_user.tweet(content)
